@@ -1,5 +1,7 @@
 package com.gitsome.chan.core;
 
+import com.gitsome.chan.core.config.ValidatorExceptionResolver;
+import com.gitsome.chan.core.config.WafRestErrorResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
@@ -13,10 +15,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
-
+    @Bean
+    public ValidatorExceptionResolver getValidatorExceptionResolver() {
+        return new ValidatorExceptionResolver();
+    }
     @Bean
     public MethodValidationPostProcessor methodValidationPostProcessor() {
         return new MethodValidationPostProcessor();
     }
-
+//    @Bean
+//    public WafRestErrorResolver wafErrorResolver() {
+//        return new WafRestErrorResolver();
+//    }
 }
