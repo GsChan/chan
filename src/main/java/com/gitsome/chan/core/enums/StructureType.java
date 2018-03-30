@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum StructureType {
 
     TREE(1,"树"),
-    LIST(2,"列表");
+    LIST(0,"列表");
 
     private Integer type;
     private String name;

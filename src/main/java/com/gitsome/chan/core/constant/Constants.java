@@ -6,5 +6,5 @@ package com.gitsome.chan.core.constant;
  * Time : 10:50
  */
 public class Constants {
-    public static final String V1 ="v1";
+    public static final String V1 ="/v1";
 }

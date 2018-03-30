@@ -20,7 +20,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "user")
-public class User {
+public class User extends BaseEntity{
     @Id
     @GeneratedValue
     @Type(type = "uuid-char")
