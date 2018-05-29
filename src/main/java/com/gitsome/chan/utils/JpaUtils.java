@@ -3,7 +3,7 @@ package com.gitsome.chan.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.ymhrj.ywjx.controller.vo.PageData;
+import com.gitsome.chan.controller.vo.PageData;
 import org.hibernate.transform.Transformers;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.CollectionUtils;
@@ -69,7 +69,7 @@ public class JpaUtils {
         query.unwrap(org.hibernate.SQLQuery.class)
                 .setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
         setQuery(query, paramMap, pageable);
-        List<JSONObject> list = new ArrayList<>();
+        List<JSONObject> list = new ArrayList<JSONObject>();
         List<Map<String,Object>> mapList = query.getResultList();
         for (Map<String,Object> map : mapList){
             list.add(JSONObject.parseObject(JSON.toJSONString(map)));

@@ -26,11 +26,11 @@ public class UserController {
 
     @RequestMapping(value = "/{user_id}",method = RequestMethod.GET)
     public User getUser(@PathVariable("user_id")UUID userId){
-        return userRepository.findOne(userId);
+        throw new RuntimeException("aaa");
+//        return userRepository.findOne(userId);
     }
     @RequestMapping(value = "",method = RequestMethod.POST)
     public User insert(@RequestBody User user){
-//        user.setId(UUID.randomUUID());
         userRepository.save(user);
         return user;
     }

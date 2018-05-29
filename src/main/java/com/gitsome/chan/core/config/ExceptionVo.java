@@ -14,5 +14,5 @@ public class ExceptionVo {
     public String host;
     public String requestId;
     public Date serverTime;
-    public Object e;
+    public Object detail;
 }

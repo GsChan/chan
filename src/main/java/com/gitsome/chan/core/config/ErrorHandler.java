@@ -22,11 +22,11 @@ public class ErrorHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    public ExceptionVo errorResposne(Exception e) {
+    public ExceptionVo errorResponse(Exception e) {
         ExceptionVo exception = new ExceptionVo();
         exception.setCode("ERROR");
         exception.setMessage(e.getMessage());
-        exception.setE(e.getCause());
+        exception.setDetail(e.getCause());
         exception.setServerTime(new Date());
         exception.setHost(servletRequest.getServerName());
         exception.setRequestId(servletRequest.getRequestedSessionId());
