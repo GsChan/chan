@@ -66,7 +66,7 @@
             </plugin>
         </plugins>
         <filters>
-            <filter>src/main/resources/env/application-${env}.yml</filter>
+            <filter>src/main/resources/application-${env}.yml</filter>
         </filters>
     </build>
 

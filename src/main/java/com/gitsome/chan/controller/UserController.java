@@ -1,5 +1,6 @@
 package com.gitsome.chan.controller;
 
+import com.gitsome.chan.controller.vo.LoginVo;
 import com.gitsome.chan.core.constant.Constants;
 import com.gitsome.chan.entity.User;
 import com.gitsome.chan.repository.UserRepository;
@@ -9,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import sun.org.mozilla.javascript.internal.Function;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 /**
@@ -23,6 +25,14 @@ import java.util.UUID;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+
+    @RequestMapping(value = "/actions/login",method = RequestMethod.POST)
+    public User login(@NotNull @Valid @RequestBody LoginVo loginVo){
+        if(loginVo.getUsername().equals("admin") && loginVo.getPassword().equals("111111")){
+            return new User();
+        }
+        throw new RuntimeException("账号密码错误!");
+    }
 
     @RequestMapping(value = "/{user_id}",method = RequestMethod.GET)
     public User getUser(@PathVariable("user_id")UUID userId){

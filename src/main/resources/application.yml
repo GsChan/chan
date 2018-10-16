@@ -1,10 +1,10 @@
 spring:
   profiles:
-    active: @env@
+    active: "@env@"
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+#      ddl-auto: update
       dialect: org.hibernate.dialect.MySQL5Dialect
   jackson:
     serialization:
