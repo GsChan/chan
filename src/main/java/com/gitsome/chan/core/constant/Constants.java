@@ -1,6 +1,7 @@
 package com.gitsome.chan.core.constant;
 
 /**
+ * 常量
  * @author : 130801(cgs)
  * Date : 2018-01-29
  * Time : 10:50

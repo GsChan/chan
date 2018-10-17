@@ -1,7 +1,6 @@
 package com.gitsome.chan.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
@@ -9,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -20,16 +19,20 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "user")
-public class User extends BaseEntity{
+public class User {
     @Id
     @GeneratedValue
     @Type(type = "uuid-char")
-    @Column(name = "id",nullable = false,length = 36)
+    @Column(name = "id")
     private UUID id;
-    @Column(name = "name",nullable = false,length = 100)
+    @Column(name = "name")
     private String name;
-    @Column(name = "account",nullable = false,length = 100)
+    @Column(name = "account")
     private String account;
-    @Column(name = "password",nullable = false,length = 100)
+    @Column(name = "password")
     private String password;
+    @Column(name = "create_time")
+    private Date createTime;
+    @Column(name = "update_time")
+    private Date updateTime;
 }
